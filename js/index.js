@@ -24,6 +24,9 @@ $(document).ready(function() {
 		else if ($(this).children().text()=="系统权限") {
 			iframeBox.attr("src","ssggnjk.html");
 		}
+    else if ($(this).children().text()=="备纤检测") {
+			iframeBox.attr("src","ssggnjk.html");
+		}
 
 
 

@@ -71,7 +71,36 @@ table.tableBox td {
 .upBox {
   height: 50%;
 }
-
+.upBox h4{
+  padding-left: 10px;
+}
+.upLeftBox{
+  float: left;
+}
+.upRightBox{
+  overflow: hidden;
+}
+.upRightTitle{
+  background: #eff1f1;
+  color: #419ae0;
+  width: 100%;
+  height: 28px;
+  line-height: 28px;
+}
+.upRightCase ul li{
+  float: left;
+  margin: 0 4px;
+  font-size: 12px;
+}
+.upRightCase ul li u{
+  display: inline-block;
+  width: 14px;
+  height:14px;
+  border-radius: 4px;
+  background: pink;
+  vertical-align: middle;
+  margin-right: 5px;
+}
 .downBox {
   height: 50%;
 }
@@ -93,3 +122,5 @@ table.tableBox td {
   line-height: 28px;
   margin: 0 10px;
 }
+
+.downBox
