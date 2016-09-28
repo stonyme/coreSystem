@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script src="./js/angular.min.js" charset="utf-8"></script>
+  <script src="./js/jquery-3.1.1.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/login.css">
+</head>
+
+<body>
+  <div class="bgBox" ng-app="">
+    <div class="header"></div>
+    <div class="loginBox">
+      <h5>移动纤芯系统</h5>
+      <ul>
+        <li><span>用户名：</span><input id="userName" type="text" value="" ng-model="userName"></li>
+        <li><span>密  码：</span><input id="psw" type="Password" value="" ng-model="userPassword"></li>
+        <li class="yzmBox"><span>验证码：</span><input type="text" value="">
+          <sapn><img src="" alt=""></sapn>
+        </li>
+        <li><span></span><input id="loginButton" type="button" value="登录"></li>
+      </ul>
+    </div>
+  </div>
+  <script>
+    $("#loginButton").click(function() {
+      var userName = $("#userName").val();
+      console.log(userName);
+      var userpsw = $("#psw").val();
+      console.log(userpsw);
+      var data = {
+        TenancyName: "default",
+        UsernameOrEmailAddress: userName,
+        Password: userpsw
+      }
+      var jsonData = JSON.stringify(data);
+      $.ajax({
+        type: "post",
+        url: "http://115.28.76.224:8082/Account/Login",
+        data: jsonData,
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        success: function(msg) {
+          if (msg.success = true) {
+            alert("登录成功");
+          }
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown) {
+          alert("登录失败");
+        },
+        complete: function(XMLHttpRequest, textStatus) {
+          this; // 调用本次AJAX请求时传递的options参数
+        }
+      })
+    });
+  </script>
+</body>
+
+</html>
